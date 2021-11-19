@@ -27,6 +27,10 @@ var win = 0;
 var score = 10000;
 
 document.body.style.backgroundColor = "#9b9b9b";
+<<<<<<< HEAD
+=======
+
+>>>>>>> 05a76914b364f8e94e14be2f83abbda7ac0f9eaa
 //Score
 var scoreBox = document.createElement("div");
 document.body.appendChild(scoreBox);
