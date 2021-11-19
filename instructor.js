@@ -26,6 +26,8 @@ var click = -1;
 var win = 0;
 var score = 10000;
 
+document.body.style.backgroundColor = "#9b9b9b";
+
 //Score
 var scoreBox = document.createElement("div");
 document.body.appendChild(scoreBox);
