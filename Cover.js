@@ -1,4 +1,9 @@
 import { Node } from "./Node.js";
+
+function play(audio) {
+  var audio = new Audio(audios);
+  audio.play();
+}
 export class Cover extends Node {
   constructor(image, index) {
     super();
@@ -25,6 +30,7 @@ export class Cover extends Node {
       this.view.style.transform = "rotateY(180deg)";
     }
   }
+
   close() {
     if (!this.isDeleted) {
       this.view.style.backgroundColor = "orange";
