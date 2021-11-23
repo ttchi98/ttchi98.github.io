@@ -20,7 +20,7 @@ export class Cover extends Node {
       this.view.style.backgroundImage = this.image;
       this.view.style.backgroundColor = "#fff";
       this.view.style.backgroundSize = "contain";
-      this.gasp.to({ duration: 1, rotationY: 180 });
+      // this.gasp.to({ duration: 1, rotationY: 180 });
     }
   }
 
