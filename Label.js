@@ -6,8 +6,8 @@ export class Label extends Node {
     this.string = this._string;
     this.view.style.color = "black";
     this.view.style.fontSize = "30px";
-    this.x = 25;
-    this.y = 25;
+    this.x = 35;
+    this.y = 30;
   }
 
   get string() {
