@@ -9,27 +9,17 @@ let scoreNum = 2000;
 let temp = [];
 let indexTemp = [];
 let canClick = true; //flag
-// let img = new Sprite();
-// img.src = "./img/mew.png";
+let checkIndexCard = 20;
+let arrDuplicate = [];
 
 let randomImage = shuffle();
 function shuffle() {
-  let arrImage = [
-    "url(./img/Articuno.png)",
-    "url(./img/Bulbasaur.png)",
-    "url(./img/Charmander.png)",
-    "url(./img/Eevee.png)",
-    "url(./img/mew.png)",
-    "url(./img/mewtwo.png)",
-    "url(./img/Moltres.png)",
-    "url(./img/pikachu.png)",
-    "url(./img/Squirtle.png)",
-    "url(./img/Zapdos.png)",
-  ];
-
-  let arrDuplicate = arrImage.concat(arrImage);
-
+  for (let i = 0; i < 10; i++) {
+    const arrImage = "url(./img/pokemon-" + i + ".png)";
+    arrDuplicate.push(arrImage, arrImage);
+  }
   arrDuplicate.sort(() => Math.random() - 0.5);
+
   return arrDuplicate;
 }
 
@@ -66,9 +56,17 @@ const resetGame = () => {
 };
 
 const checkScore = () => {
+  if (checkIndexCard === 0) {
+    setTimeout(() => {
+      alert(`Congrats!!! You'r Score: ${scoreNum}`);
+    }, 500);
+  }
   if (scoreNum === 0) {
-    alert("You lose!");
-    // return resetGame();
+    scoreBox.view.innerHTML = "Score = " + scoreNum;
+    setTimeout(() => {
+      alert("You lose!");
+      return resetGame();
+    }, 500);
   } else if (scoreNum !== 0) {
     scoreBox.view.innerHTML = "Score = " + scoreNum;
   }
@@ -126,6 +124,7 @@ function onClickFunction(index) {
           temp = [];
           indexTemp = [];
           scoreNum += 1000;
+          checkIndexCard -= 2;
           checkScore();
           canClick = true;
         }, 1000);
